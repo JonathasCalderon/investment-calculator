@@ -1,17 +1,18 @@
 import InputGroup from "./InputGroup";
 
-export default function UserInput() {
+export default function UserInput({onChange, userInput}) {
+
   return (
-    <div id="user-input">
+    <section id="user-input"> 
       <div className="input-group">
-        <InputGroup label="Initial Investment" inputName="initialInvestment"/>
-        <InputGroup label="Annual Investment" inputName="annualInvestment"/>
+        <InputGroup label="Initial Investment" inputName="initialInvestment" onChange={onChange} value={userInput.initialInvestment}/>
+        <InputGroup label="Annual Investment" inputName="annualInvestment" onChange={onChange} value={userInput.annualInvestment}/>
       </div>
       <div className="input-group">
-        <InputGroup label="Expected Return" inputName="expectedReturn"/>
-        <InputGroup label="Duration" inputName="duration"/>
+        <InputGroup label="Expected Return" inputName="expectedReturn" onChange={onChange} value={userInput.expectedReturn}/>
+        <InputGroup label="Duration" inputName="duration" onChange={onChange} value={userInput.duration}/>
       </div>
     
-    </div>
+    </section>
   )
 }

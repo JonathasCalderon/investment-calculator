@@ -1,8 +1,14 @@
-export default function InputGroup({label, inputName}) {
+export default function InputGroup({label, inputName, onChange, value}) {
   return(
-    <div>
+    <p>
       <label htmlFor={inputName}>{label}</label>
-      <input type="text" name={inputName}/>
-    </div>
+      <input 
+        type="number" 
+        name={inputName} 
+        required 
+        onChange={(event) => onChange(inputName, event.target.value)}
+        value={value}
+      />
+    </p>
   )
 }
